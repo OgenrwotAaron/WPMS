@@ -142,17 +142,17 @@ const Sidebar = props => {
             activeClassName={classes.active}
             className={classes.button}
             component={CustomRouterLink}
-            to='/mapview'
+            to='/dashboard'
           >
-            Map View
+            Grap View
           </Button>
           <Button
             activeClassName={classes.active}
             className={classes.button}
             component={CustomRouterLink}
-            to='/dashboard'
+            to='/mapview'
           >
-            Grap View
+            Map View
           </Button>
         </div>
         
