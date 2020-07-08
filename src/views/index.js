@@ -8,4 +8,8 @@ export { default as SignIn } from './SignIn';
 export { default as SignUp } from './SignUp';
 export { default as Typography } from './Typography';
 export { default as UserList } from './UserList';
-export { default as MapView } from './MapView'
+export { default as MapView } from './MapView';
+export { default as Points } from './Points'
+export { default as AddWaterPoint } from './AddWaterPoint';
+export { default as WaterPointStatus } from './WaterPointStatus';
+export { default as Attendants } from './Attendants'

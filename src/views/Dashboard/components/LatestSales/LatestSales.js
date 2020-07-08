@@ -46,7 +46,7 @@ const LatestSales = props => {
             Last 7 Months <ArrowDropDownIcon />
           </Button>
         }
-        title="Latest Sales"
+        title="Functional Water Points"
       />
       <Divider />
       <CardContent>

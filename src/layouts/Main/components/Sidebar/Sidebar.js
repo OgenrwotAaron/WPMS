@@ -64,7 +64,7 @@ const CustomRouterLink = forwardRef((props, ref) => (
 ));
 
 const Sidebar = props => {
-  const { open, variant, onClose, className, ...rest } = props;
+  const { open, variant, onClose, match, className, ...rest } = props;
 
   const opts = [
     {
@@ -157,6 +157,7 @@ const Sidebar = props => {
         </div>
         
         <SidebarNav
+          match={match}
           className={classes.nav}
           pages={pages}
           opts={opts}

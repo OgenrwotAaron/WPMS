@@ -8,7 +8,7 @@ import CheckIcon from '@material-ui/icons/Check';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: '100%'
+    height: '100%',
   },
   content: {
     alignItems: 'center',

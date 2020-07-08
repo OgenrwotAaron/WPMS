@@ -15,7 +15,11 @@ import {
   SignUp as SignUpView,
   SignIn as SignInView,
   NotFound as NotFoundView,
-  MapView
+  MapView,
+  Points as PointsView,
+  AddWaterPoint as AddWaterPointView,
+  WaterPointStatus as WaterPointStatusView,
+  Attendants as AttendantsView
 } from './views';
 
 const Routes = () => {
@@ -37,6 +41,30 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/mapview"
+      />
+      <RouteWithLayout
+        component={PointsView}
+        exact
+        layout={MainLayout}
+        path="/points"
+      />
+      <RouteWithLayout
+        component={AddWaterPointView}
+        exact
+        layout={MainLayout}
+        path="/add-point"
+      />
+      <RouteWithLayout
+        component={WaterPointStatusView}
+        exact
+        layout={MainLayout}
+        path="/point-status"
+      />
+      <RouteWithLayout
+        component={AttendantsView}
+        exact
+        layout={MainLayout}
+        path="/attendants"
       />
       <RouteWithLayout
         component={UserListView}
