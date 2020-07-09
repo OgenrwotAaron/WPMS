@@ -36,7 +36,7 @@ const WaterPointStatus = props => {
     return ( 
         <div className={classes.root}>
             <Paper className={classes.paper}>
-                <Typography variant='h3'>Water Point Status</Typography>
+                <Typography variant='h3'>Water Point:BH0001 Status</Typography>
                 <Grid container>
                     <Hidden xsDown>
                         <Grid item sm={4}>

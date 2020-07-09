@@ -144,7 +144,7 @@ const Sidebar = props => {
             component={CustomRouterLink}
             to='/dashboard'
           >
-            Grap View
+            Graph View
           </Button>
           <Button
             activeClassName={classes.active}

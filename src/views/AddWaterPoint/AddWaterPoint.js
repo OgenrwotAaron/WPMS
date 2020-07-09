@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Paper, Typography, TextField, MenuItem, Button, Grid, Hidden } from '@material-ui/core'
+import { MapDialog } from './components';
 
 const locations = [
     {value:'tegwana',label:'Tegwana'},
@@ -40,8 +41,18 @@ const AddWaterPoint = props => {
 
     const classes = useStyles()
 
+    const [ openDialog, setOpenDialog ] = useState(false)
+
     //loaction
     //status
+
+    const openMapDialog = () =>{
+        setOpenDialog(true)
+    }
+
+    const closeMapDialog = () =>{
+        setOpenDialog(false)
+    }
 
     return ( 
         <div className={classes.root}>
@@ -56,12 +67,7 @@ const AddWaterPoint = props => {
                     </Hidden>
                     <Grid item sm={6} xs={12}>
                     <form className={classes.form}>
-                        <TextField
-                            className={classes.inputs}
-                            variant='outlined'
-                            name='location'
-                            label='Location'
-                        />
+                        <Button onClick={openMapDialog} variant='outlined' color='secondary' className={classes.inputs}>Get Water Point Location From Map</Button>
                         <TextField
                             className={classes.inputs}
                             variant='outlined'
@@ -105,6 +111,7 @@ const AddWaterPoint = props => {
                     </Grid>
                 </Grid>
             </Paper>
+            <MapDialog open={openDialog} setClose={closeMapDialog}/>
         </div>
      );
 }

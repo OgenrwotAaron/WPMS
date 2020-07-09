@@ -19,7 +19,12 @@ import {
   Points as PointsView,
   AddWaterPoint as AddWaterPointView,
   WaterPointStatus as WaterPointStatusView,
-  Attendants as AttendantsView
+  Attendants as AttendantsView,
+  AddAttendant as AddAttendantView,
+  Engineers as EgineersView,
+  AddEngineer as AddEngineerView,
+  Organisations as OrganisationsView,
+  AddOrganisation as AddOrganisationView
 } from './views';
 
 const Routes = () => {
@@ -55,6 +60,12 @@ const Routes = () => {
         path="/add-point"
       />
       <RouteWithLayout
+        component={AddAttendantView}
+        exact
+        layout={MainLayout}
+        path="/add-attendant"
+      />
+      <RouteWithLayout
         component={WaterPointStatusView}
         exact
         layout={MainLayout}
@@ -65,6 +76,30 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/attendants"
+      />
+      <RouteWithLayout
+        component={EgineersView}
+        exact
+        layout={MainLayout}
+        path="/engineers"
+      />
+      <RouteWithLayout
+        component={AddEngineerView}
+        exact
+        layout={MainLayout}
+        path="/add-engineer"
+      />
+      <RouteWithLayout
+        component={OrganisationsView}
+        exact
+        layout={MainLayout}
+        path="/organisations"
+      />
+       <RouteWithLayout
+        component={AddOrganisationView}
+        exact
+        layout={MainLayout}
+        path="/add-organisations"
       />
       <RouteWithLayout
         component={UserListView}

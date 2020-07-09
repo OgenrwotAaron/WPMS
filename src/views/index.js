@@ -12,4 +12,9 @@ export { default as MapView } from './MapView';
 export { default as Points } from './Points'
 export { default as AddWaterPoint } from './AddWaterPoint';
 export { default as WaterPointStatus } from './WaterPointStatus';
-export { default as Attendants } from './Attendants'
+export { default as Attendants } from './Attendants';
+export { default as AddAttendant } from './AddAttendant';
+export { default as Engineers } from './Engineers';
+export { default as AddEngineer } from './AddEngineer';
+export { default as Organisations } from './Organisations';
+export { default as AddOrganisation } from './AddOrganisation'
