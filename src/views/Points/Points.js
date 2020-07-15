@@ -12,6 +12,7 @@ import FirstPageOutlinedIcon from '@material-ui/icons/FirstPageOutlined';
 import DoneOutlinedIcon from '@material-ui/icons/DoneOutlined';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 import ImportExportIcon from '@material-ui/icons/ImportExport';
+import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import theme from 'theme';
 
 const icons={
@@ -24,7 +25,8 @@ const icons={
     LastPage:forwardRef((props,ref)=><LastPageOutlinedIcon {...props} ref={ref}/>),
     Check:forwardRef((props,ref)=><DoneOutlinedIcon {...props} ref={ref}/>),
     Clear:forwardRef((props,ref)=><CloseOutlinedIcon {...props} ref={ref}/>),
-    SortArrow:forwardRef((props,ref)=><ImportExportIcon {...props} ref={ref}/>)
+    SortArrow:forwardRef((props,ref)=><ImportExportIcon {...props} ref={ref}/>),
+    Add:forwardRef((props,ref)=><AddOutlinedIcon {...props} ref={ref} />)
 };
 
 const useStyles = makeStyles(theme => ({
@@ -45,18 +47,21 @@ const Points = props => {
             {
                 title:'BID',
                 field:'id',
-                render:rowData=>(
-                    <Typography>{rowData.id}</Typography>
-                )
+                editable: 'onUpdate',
+                // render:rowData=>(
+                //     <Typography>{rowData.cluster}</Typography>
+                // ),
             },
             {
                 title:'Cluster',
                 field:'cluster',
+                lookup: { 0: 'Tegwana', 1: 'Layibi', 2: 'Unyama', 3: 'Koch' },
                 render:rowData=><Typography>{rowData.cluster}</Typography>
             },
             {
                 title:'Status',
                 field:'status',
+                lookup: { 0: 'Functional', 1: 'Not Functional', 2: 'Needs Repair' },
                 render:rowData=>(
                     <Chip 
                         label={rowData.status} 
@@ -114,7 +119,12 @@ const Points = props => {
                     editable={{
                         onRowDelete:oldData=>
                             new Promise((resolve,reject)=>{
-                                console.log('delete')
+                                console.log(oldData)
+                                resolve()
+                            }),
+                        onRowAdd:newData =>
+                            new Promise((resolve,reject)=>{
+                                console.log(newData)
                                 resolve()
                             })
                     }}

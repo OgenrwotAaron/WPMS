@@ -1,12 +1,20 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@material-ui/core';
-import ReactMapBoxGl, { ZoomControl} from 'react-mapbox-gl'
+import ReactMapBoxGl, { ZoomControl, Image } from 'react-mapbox-gl'
 import DrawControl from 'react-mapbox-gl-draw'
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
+
+import markerImage from '../../../../assets/icons/marker.svg'
 
 const MapDialog = props => {
 
     const { open, setClose } = props
+
+    const marker = document.createElement('img')
+    marker.src = markerImage;
+    marker.width = 30
+    marker.height = 30
+    
 
     const Map = ReactMapBoxGl({
         accessToken:'pk.eyJ1Ijoib2dlbnJ3b3RhYXJvbiIsImEiOiJjanRxendjbnEwM3NtM3lwMnM3ZTgxNm90In0.p_6NicSsgXEMHJ0c9o1n1A'
@@ -34,7 +42,30 @@ const MapDialog = props => {
                     zoom={[15]}
                 >
                     <ZoomControl/>
-                    <DrawControl onDrawCreate={onDrawCreate} onDrawUpdate={onDrawUpdate}/>
+                    <DrawControl 
+                        displayControlsDefault={false} 
+                        onDrawCreate={onDrawCreate} 
+                        onDrawUpdate={onDrawUpdate}
+                        controls={{
+                            point:true,
+                            trash:true
+                        }}
+                        styles={[
+                            {
+                                'id': 'highlight-active-points',
+                                'type': 'symbol',
+                                'filter': ['all',
+                                  ['==', '$type', 'Point'],
+                                  ['==', 'meta', 'feature'],
+                                  ['==', 'active', 'true']],
+                                'layout': {
+                                  'icon-image':'point-marker',
+                                  'icon-anchor':'bottom'
+                                }
+                            }
+                        ]}
+                    />
+                    <Image id={'point-marker'} data={marker} />
                 </Map>
             </DialogContent>
             <DialogActions>

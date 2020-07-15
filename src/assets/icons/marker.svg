@@ -9,7 +9,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
-   sodipodi:docname="addPoint.svg"
+   sodipodi:docname="marker.svg"
    version="1.1"
    viewBox="0 0 725.83286 764.55393"
    height="764.55393"
@@ -91,7 +91,7 @@
        x2="367.4" />
   </defs>
   <sodipodi:namedview
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      inkscape:window-maximized="1"
      inkscape:window-y="27"
      inkscape:window-x="0"
@@ -114,7 +114,7 @@
   <title
      id="title2">my_location</title>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="Layer 1"
      id="layer1"
      inkscape:groupmode="layer">
@@ -201,7 +201,7 @@
        transform="matrix(0.8596667,0,0,0.8596667,47.647018,61.832854)"
        id="polygon28"
        fill="#3f3d56"
-       points="218.648,218.703 181.078,240.393 181.078,217.293 218.648,195.603 238.648,184.063 298.778,149.343 326.648,133.253 331.098,130.683 341.098,148.003 338.778,149.343 326.648,156.343 238.648,207.153 " />
+       points="326.648,156.343 238.648,207.153 218.648,218.703 181.078,240.393 181.078,217.293 218.648,195.603 238.648,184.063 298.778,149.343 326.648,133.253 331.098,130.683 341.098,148.003 338.778,149.343 " />
     <rect
        style="opacity:1;fill:#c4daff;fill-opacity:1;stroke-width:0.859667"
        id="rect30"
@@ -244,17 +244,6 @@
        height="86.626076"
        x="76.423683"
        y="-235.61105" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:139.85px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.87298"
-       x="370.76602"
-       y="317.89511"
-       id="text1220-5"><tspan
-         sodipodi:role="line"
-         id="tspan1218-2"
-         x="370.76602"
-         y="317.89511"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';fill:#f9f2f2;fill-opacity:1;stroke-width:1.87298">W</tspan></text>
   </g>
   <g
      inkscape:label="Layer 2"
@@ -2115,7 +2104,6 @@
        style="display:inline;stroke-width:0.971261" />
   </g>
   <g
-     style="display:none"
      inkscape:label="marker"
      id="layer3"
      inkscape:groupmode="layer">
