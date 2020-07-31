@@ -16,22 +16,22 @@ const mainOpts = [
   {
     name:'Water Points', 
     icon:<OpacityIcon/>,
-    options:[{name:'Points',link:'/points'},{name:'Add Water Point',link:'/add-point'},{name:'Water Point Status',link:'/point-status'}],
+    options:[{name:'Points',link:'/points'}],
   },
   {
     name:'Attendants',
     icon:<SupervisedUserCircleOutlinedIcon/>,
-    options:[{name:'Attendants',link:'/attendants'},{name:'Add Attendant',link:'/add-attendant'}]
+    options:[{name:'Attendants',link:'/attendants'}]
   },
   {
     name:'Engineers',
     icon:<SupervisorAccountOutlinedIcon/>,
-    options:[{name:'Engineers',link:'engineers'},{name:'Add Engineer',link:'/add-engineer'}]
+    options:[{name:'Engineers',link:'engineers'}]
   },
   {
     name:'Organisations',
     icon:<BusinessIcon/>,
-    options:[{name:'Organisations',link:'/organisations'},{name:'Add Organisation',link:'add-organisations'}]
+    options:[{name:'Organisations',link:'/organisations'}]
   },
 ];
 
@@ -99,6 +99,7 @@ const SidebarNav = props => {
   //const [selectedIndex, setSelectedIndex] = useState(0)
   const [down, setDown] = useState();
   const [status, setStatus] = useState(false)
+  const [checked, setChecked] = useState({});
 
   // const handleListItemClick = (event,index)=>{
   //   setSelectedIndex(index)
@@ -108,6 +109,13 @@ const SidebarNav = props => {
     //setSelectedIndex('')
     setDown(index)
     setStatus(!status)
+  }
+
+  const handleCheck = event =>{
+    setChecked({
+      ...checked,
+      [event.target.value]:event.target.checked
+    })
   }
 
   return (
@@ -174,7 +182,7 @@ const SidebarNav = props => {
                   <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
                         <ListItemIcon>
-                          <Checkbox edge='start'/>
+                          <Checkbox checked={checked.opt} value={opt} onChange={handleCheck} edge='start'/>
                         </ListItemIcon>
                         <ListItemText className={classes.title} primary={opt} />
                     </ListItem>

@@ -6,10 +6,6 @@ import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
 
 import {
   Dashboard as DashboardView,
-  ProductList as ProductListView,
-  UserList as UserListView,
-  Typography as TypographyView,
-  Icons as IconsView,
   Account as AccountView,
   Settings as SettingsView,
   SignUp as SignUpView,
@@ -17,14 +13,13 @@ import {
   NotFound as NotFoundView,
   MapView,
   Points as PointsView,
-  AddWaterPoint as AddWaterPointView,
-  WaterPointStatus as WaterPointStatusView,
+  ViewWaterPoint as ViewWaterPointView,
   Attendants as AttendantsView,
-  AddAttendant as AddAttendantView,
   Engineers as EgineersView,
-  AddEngineer as AddEngineerView,
   Organisations as OrganisationsView,
-  AddOrganisation as AddOrganisationView
+  Organisation as OrganisationView,
+  District as DistrictView,
+  Cluster as ClusterView
 } from './views';
 
 const Routes = () => {
@@ -54,22 +49,10 @@ const Routes = () => {
         path="/points"
       />
       <RouteWithLayout
-        component={AddWaterPointView}
+        component={ViewWaterPointView}
         exact
         layout={MainLayout}
-        path="/add-point"
-      />
-      <RouteWithLayout
-        component={AddAttendantView}
-        exact
-        layout={MainLayout}
-        path="/add-attendant"
-      />
-      <RouteWithLayout
-        component={WaterPointStatusView}
-        exact
-        layout={MainLayout}
-        path="/point-status"
+        path="/view-point/:id"
       />
       <RouteWithLayout
         component={AttendantsView}
@@ -84,46 +67,28 @@ const Routes = () => {
         path="/engineers"
       />
       <RouteWithLayout
-        component={AddEngineerView}
-        exact
-        layout={MainLayout}
-        path="/add-engineer"
-      />
-      <RouteWithLayout
         component={OrganisationsView}
         exact
         layout={MainLayout}
         path="/organisations"
       />
-       <RouteWithLayout
-        component={AddOrganisationView}
+      <RouteWithLayout
+        component={OrganisationView}
         exact
         layout={MainLayout}
-        path="/add-organisations"
+        path='/organisation/:id'
       />
       <RouteWithLayout
-        component={UserListView}
+        component={ClusterView}
         exact
         layout={MainLayout}
-        path="/users"
+        path='/cluster/:name'
       />
       <RouteWithLayout
-        component={ProductListView}
+        component={DistrictView}
         exact
         layout={MainLayout}
-        path="/products"
-      />
-      <RouteWithLayout
-        component={TypographyView}
-        exact
-        layout={MainLayout}
-        path="/typography"
-      />
-      <RouteWithLayout
-        component={IconsView}
-        exact
-        layout={MainLayout}
-        path="/icons"
+        path='/district/:name'
       />
       <RouteWithLayout
         component={AccountView}

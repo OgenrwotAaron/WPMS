@@ -1,0 +1,29 @@
+[
+    {
+        "name":"Save the Children",
+        "clusters":"Tegwana, Laliya, Layibi",
+        "email":"savethechildren@save.com",
+        "type":"N.G.O",
+        "confirm":true,
+        "id":1,
+        "access":"Active"
+    },
+    {
+        "name":"World Vision",
+        "clusters":"Kasubi,Lawiyadul,Unyama",
+        "email":"worldvision@vision.com",
+        "type":"N.G.O",
+        "confirm":false,
+        "id":2,
+        "access":"Pending"
+    },
+    {
+        "name":"USAID",
+        "clusters":"Lacor,KatiKati",
+        "email":"usaid@aid.com",
+        "type":"Government",
+        "confirm":false,
+        "id":3,
+        "access":"InActive"
+    }
+]

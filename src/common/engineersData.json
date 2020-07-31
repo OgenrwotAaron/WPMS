@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Mark Opiyo",
+        "designation":"District Engineer",
+        "email":"markopiyo@water.com",
+        "district":"gulu",
+        "phone":"+256712345678"
+    },
+    {
+        "name":"John Mugenyi",
+        "designation":"District Water Engineer",
+        "email":"johnmugenyi@water.com",
+        "district":"hoima",
+        "phone":"+256712678345"
+    },
+    {
+        "name":"Allan Okot",
+        "designation":"Assistant District Water Engineer",
+        "email":"allanokot@water.com",
+        "district":"apac",
+        "phone":"+256745612378"
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Mark Opiyo",
+        "cluster":"tegwana",
+        "phone":"+256712345678"
+    },
+    {
+        "name":"John Mugenyi",
+        "cluster":"kireka",
+        "phone":"+256712678345"
+    },
+    {
+        "name":"Allan Okot",
+        "cluster":"kasubi",
+        "phone":"+256745612378"
+    }
+]

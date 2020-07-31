@@ -1,0 +1,34 @@
+[
+    {
+        "id":"B0001",
+        "cluster":"tegwana",
+        "status":"Functional",
+        "type":"salty",
+        "quantity":"35",
+        "location":"2.77,32.28"
+    },
+    {
+        "id":"B0002",
+        "cluster":"ariaga",
+        "status":"Needs Repair",
+        "type":"hard",
+        "quantity":"60",
+        "location":"2.78,32.18"
+    },
+    {
+        "id":"B0003",
+        "cluster":"kasubi",
+        "status":"Non Functional",
+        "type":"soft",
+        "quantity":"10",
+        "location":"2.57,32.28"
+    },
+    {
+        "id":"B0004",
+        "cluster":"laliya",
+        "status":"Functional",
+        "type":"soft",
+        "quantity":"40",
+        "location":"2.67,32.08"
+    }
+]

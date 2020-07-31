@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import ReactMapBoxGl, { Layer, Feature, ZoomControl} from 'react-mapbox-gl'
+import ReactMapGL, { NavigationControl, Popup } from 'react-map-gl'
 import { makeStyles } from '@material-ui/styles';
 import { ToggleButtonGroup, ToggleButton} from '@material-ui/lab';
+import { Markers } from './components';
+import { Typography, Divider } from '@material-ui/core';
 
 const useStyles = makeStyles(theme=>({
     root:{
@@ -33,14 +35,33 @@ const MapView = props => {
     const classes = useStyles()
 
     const [styleUrl,setStyleUrl] = useState("mapbox://styles/mapbox/streets-v9")
+    const [viewPort, setViewPort] = useState({
+        latitude: 2.6724,
+        longitude: 32.2481,
+        zoom: 10,
+        bearing: 0,
+        width:'100%',
+        height:'90vh',
+        pitch: 0
+    });
+    const [point, setPoint] = useState({
+        location:''
+    });
+    const [popUp, setPopUp] = useState();
 
-    const Map = ReactMapBoxGl({
-        accessToken:'pk.eyJ1Ijoib2dlbnJ3b3RhYXJvbiIsImEiOiJjanRxendjbnEwM3NtM3lwMnM3ZTgxNm90In0.p_6NicSsgXEMHJ0c9o1n1A'
-    })
+
+    const handleViewPortChange = viewport =>{
+        setViewPort({...viewport})
+    }
 
     const handleChange = (event,newUrl) =>{
-        console.log(newUrl,event.target.value)
         setStyleUrl(newUrl)
+        console.log(newUrl)
+    }
+
+    const handleMarkerClick = (point) =>{
+        setPopUp(!popUp)
+        setPoint(point)
     }
 
     return ( 
@@ -62,20 +83,32 @@ const MapView = props => {
                     </ToggleButton>
                 </ToggleButtonGroup>
             </div>
-            <Map
-                style={styleUrl}
-                containerStyle={{
-                    width:'100%',
-                    height:'100%'
-                }}
-                center={[32.2881,2.7724]}
-                zoom={[15]}
+            <ReactMapGL 
+                mapStyle={styleUrl}
+                mapboxApiAccessToken='pk.eyJ1Ijoib2dlbnJ3b3RhYXJvbiIsImEiOiJjanRxendjbnEwM3NtM3lwMnM3ZTgxNm90In0.p_6NicSsgXEMHJ0c9o1n1A'
+                {...viewPort}
+                onViewportChange={handleViewPortChange}
             >
-                <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                    <Feature coordinates={[2.7724, 32.2881]} />
-                </Layer>
-                <ZoomControl/>
-            </Map>
+                <div style={{position: 'absolute', right: 0}}>
+                    <NavigationControl showZoom={true}/>
+                </div>
+                <Markers handleMarkerClick={handleMarkerClick}/>
+                {
+                    popUp &&
+                    <Popup
+                        latitude={parseFloat(point.location.split(',')[0])}
+                        longitude={parseFloat(point.location.split(',')[1])}
+                        closeButton={false}
+                        offsetLeft={15}
+                        onClose={handleMarkerClick}
+                    >
+                        <Typography>{point.id}</Typography>
+                        <Divider/>
+                        <Typography color='textSecondary'>{point.status}</Typography>
+                        <Typography color='textSecondary' variant='caption'>{point.location}, {point.cluster}</Typography>
+                    </Popup>
+                }
+            </ReactMapGL>
         </div>
      );
 }
